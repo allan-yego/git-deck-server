@@ -2,7 +2,6 @@ from flask import (Blueprint, g, request)
 from github import (Github, Auth)
 from . import models
 from . import util
-from . import models
 from . import decorators
 from . import github_api
 

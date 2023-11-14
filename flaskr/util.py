@@ -55,8 +55,8 @@ def create_success_response(data):
     return __create_response(data)
 
 def encrypt_token(token):
-    from . import fernet_config
-    APP_SECRET = fernet_config.APP_SECRET
+    from . import config
+    APP_SECRET = config.APP_SECRET
 
     fernet = Fernet(APP_SECRET)
 
@@ -64,8 +64,8 @@ def encrypt_token(token):
 
 
 def decrypt_token(token):
-    from . import fernet_config
-    APP_SECRET = fernet_config.APP_SECRET
+    from . import config
+    APP_SECRET = config.APP_SECRET
 
     fernet = Fernet(APP_SECRET)
 

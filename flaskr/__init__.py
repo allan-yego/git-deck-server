@@ -33,8 +33,9 @@ def create_app(test_config=None):
 
     # connect to database
     # connect("gitdeck")
+    from . import config
 
-    connect('git-deck', host=os.environ.get('MONGO_URI'))
+    connect('git-deck', host=config.MONGO_URI)
 
     # allow CORS to this server
     CORS(app)
