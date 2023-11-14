@@ -8,10 +8,11 @@ from dotenv import load_dotenv
 load_dotenv()  # load environment variables from .env file
 
 def get_access_token(code):
+    from . import config
     # construct the payload
     payload = {
-        'client_id': os.environ.get('CLIENT_ID'),
-        'client_secret': os.environ.get('CLIENT_SECRET'),
+        'client_id': config.CLIENT_ID,
+        'client_secret': config.CLIENT_SECRET,
         'code': code
     }
 
