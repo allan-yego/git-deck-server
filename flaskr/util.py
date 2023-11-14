@@ -3,7 +3,7 @@ import requests
 from github import (Auth, Github)
 from cryptography.fernet import Fernet
 from dotenv import load_dotenv
-import fernet_config
+from . import fernet_config
 
 
 load_dotenv()  # load environment variables from .env file

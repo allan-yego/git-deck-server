@@ -13,4 +13,4 @@ dist/
 build/
 *.egg-info/
 .env
-fernet_config.py
+flaskr/fernet_config.py
