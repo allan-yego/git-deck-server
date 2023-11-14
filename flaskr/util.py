@@ -3,14 +3,9 @@ import requests
 from github import (Auth, Github)
 from cryptography.fernet import Fernet
 from dotenv import load_dotenv
-from . import fernet_config
 
 
 load_dotenv()  # load environment variables from .env file
-
-bytes()
-
-APP_SECRET = fernet_config.APP_SECRET
 
 def get_access_token(code):
     # construct the payload
@@ -60,12 +55,18 @@ def create_success_response(data):
     return __create_response(data)
 
 def encrypt_token(token):
+    from . import fernet_config
+    APP_SECRET = fernet_config.APP_SECRET
+
     fernet = Fernet(APP_SECRET)
 
     return fernet.encrypt(token.encode())
 
 
 def decrypt_token(token):
+    from . import fernet_config
+    APP_SECRET = fernet_config.APP_SECRET
+
     fernet = Fernet(APP_SECRET)
 
     return fernet.decrypt(token.encode()).decode()
